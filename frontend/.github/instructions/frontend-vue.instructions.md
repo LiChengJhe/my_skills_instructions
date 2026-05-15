@@ -3,7 +3,7 @@ description: Vue 3、Vuetify 3、TypeScript 前端開發指令。適用於 compo
 applyTo: "**/*.{vue,ts,tsx,js,jsx}"
 ---
 
-# Vue 3 / Vuetify 3 / TypeScript 前端指令（強化版）
+# Vue 3 / Vuetify 3 / TypeScript 前端指令
 
 ## 🧠 工作流程
 

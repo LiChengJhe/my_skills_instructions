@@ -1,4 +1,4 @@
-# GitHub Copilot 通用指令（強化版）
+# GitHub Copilot 通用指令
 
 ## 語言
 
