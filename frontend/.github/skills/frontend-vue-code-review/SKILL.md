@@ -1,185 +1,185 @@
 ---
 name: frontend-vue-code-review
-description: Vue 3 + Vuetify 3 + TypeScript 前端 Code Review
+description: Vue 3 + Vuetify 3 + TypeScript frontend code review
 ---
 
-# 前端 Code Review Skill
+# Frontend Code Review Skill
 
-## 🧠 1. Review 原則（最高優先）
+## 🧠 1. Review Principles (Highest Priority)
 
-- 以「需求正確性」優先，其次才是技術品質
-- 僅指出「重要問題」，避免雜訊
-- 問題需分類：
-  - 必須修（錯誤 / 風險）
-  - 建議修（品質 / 維護性）
-  - 可選（優化）
+- Prioritize **requirement correctness** first, then technical quality
+- Only highlight **critical issues**, avoid noise
+- Classify issues into:
+  - Must Fix (bugs / risks)
+  - Suggested Fix (quality / maintainability)
+  - Optional (optimization)
 
 ---
 
-## 🔍 2. Review 流程（固定順序）
+## 🔍 2. Review Workflow (Fixed Order)
 
-1. 需求符合度
-2. 核心技術（Vue / TS / Vuetify）
+1. Requirement alignment
+2. Core technologies (Vue / TS / Vuetify)
 3. UI / Layout
-4. API / 狀態
-5. 可讀性 / 維護性
-6. 效能
-7. 測試建議
+4. API / State handling
+5. Readability / Maintainability
+6. Performance
+7. Testing suggestions
 
 ---
 
-## 🎯 3. 需求符合度（最重要）
+## 🎯 3. Requirement Alignment (Most Important)
 
-檢查：
+Check:
 
-- 是否符合需求
-- 是否：
-  - 多做
-  - 少做
-  - 偏離
-- 是否有未說明假設
+- Whether it meets requirements
+- Whether it:
+  - Does too much
+  - Does too little
+  - Deviates from requirements
+- Whether there are undocumented assumptions
 
-👉 若此階段失敗，直接判定「需修改」
+👉 If this stage fails → directly mark as **Needs Fix**
 
 ---
 
-## 🧩 4. 核心技術檢查
+## 🧩 4. Core Technology Checks
 
 ### Vue
 
-- 必須：
+- Must use:
   - Composition API
   - `<script setup lang="ts">`
-- 不得：
-  - 修改 props
-- 避免：
-  - computed 有副作用
-  - watch 濫用
-  - template 複雜邏輯
+- Must NOT:
+  - Mutate props
+- Avoid:
+  - Side effects in computed
+  - Overuse of watch
+  - Complex logic in template
 
 ---
 
 ### TypeScript
 
-- 不得濫用 `any`
-- 必須有型別：
+- Do not overuse `any`
+- Must define types for:
   - props / emits
-  - API response
-  - form / table
-- nullable 必須正確處理
-- 避免不安全 assertion
+  - API responses
+  - form / table data
+- Nullable must be handled properly
+- Avoid unsafe assertions
 
 ---
 
-### Vuetify（強制）
+### Vuetify (Mandatory)
 
-- 必須使用 Vuetify 元件 / layout / utility
-- 不得：
-  - 重造元件
-  - 用 custom UI 取代
-- 不得硬編碼顏色（應用 theme / token）
+- Must use Vuetify components / layout / utilities
+- Must NOT:
+  - Rebuild existing components
+  - Replace with custom UI
+- Must NOT hardcode colors (use theme / tokens)
 
 ---
 
 ## 🎨 5. UI / Layout
 
-- 使用 flex / grid（避免 float / table）
-- CSS：
-  - 必須 scoped
-  - custom CSS 應最小化
-- 不得：
-  - 大量 absolute
+- Use flex / grid (avoid float / table)
+- CSS:
+  - Must be scoped
+  - Minimize custom CSS
+- Must NOT:
+  - Use excessive absolute positioning
 
-### Theme 檢查
+### Theme Checks
 
-- 支援 dark / light
-- 不得硬編碼顏色
-- 對比度需合理
-- 支援 prefers-color-scheme + persist
+- Support dark / light mode
+- No hardcoded colors
+- Maintain proper contrast
+- Support `prefers-color-scheme` + persistence
 
 ---
 
-## 🔌 6. API / 狀態
+## 🔌 6. API / State Handling
 
-必須處理：
+Must handle:
 
 - loading
 - error
-- empty
+- empty states
 
-檢查：
+Check:
 
-- 是否吞錯
-- 是否有 race condition
-- 是否重複 API 邏輯
-- 是否改 API contract
-
----
-
-## ♻️ 7. 可讀性 / 維護性
-
-- 命名清楚
-- 方法不過長、不過度拆分
-- 無重複邏輯
-- 不過度設計
-
-檢查：
-
-- 是否影響 props / emits / API 相容性
-- 是否不必要抽象（composable / pattern）
+- Are errors swallowed?
+- Are there race conditions?
+- Is API logic duplicated?
+- Is API contract changed?
 
 ---
 
-## ⚡ 8. 效能
+## ♻️ 7. Readability / Maintainability
 
-- 避免：
-  - 不必要 re-render
-  - template 重運算
-  - deep watch 濫用
-- list / table：
-  - 是否需要 pagination / virtual scroll
+- Clear naming
+- Methods are not too long and not overly fragmented
+- No duplicated logic
+- No over-engineering
 
----
+Check:
 
-## 🧪 9. 測試建議（Playwright）
-
-- 僅提供建議，不產生測試碼
-- 優先：
-
-  - 正常流程
-  - 錯誤情境
-  - loading / empty
-  - 表單驗證
-  - 關鍵互動
-
-- Theme 測試：
-  - dark / light 切換
-  - 偏好 persist
+- Does it impact props / emits / API compatibility?
+- Any unnecessary abstraction (composable / patterns)?
 
 ---
 
-## 📤 10. 回覆格式（固定）
+## ⚡ 8. Performance
 
-### Review 結論
-- 結論：通過 / 需修改 / 有風險
-- 主要原因：
-
----
-
-### 必須修改
-- 嚴重問題（bug / 風險 / 需求錯）
+- Avoid:
+  - Unnecessary re-renders
+  - Heavy computation in templates
+  - Overuse of deep watch
+- list / table:
+  - Should pagination / virtual scroll be applied?
 
 ---
 
-### 建議修改
-- 可讀性 / 型別 / Vuetify / 結構改善
+## 🧪 9. Testing Suggestions (Playwright)
+
+- Provide suggestions only (do not write test code)
+- Prioritize:
+
+  - Happy path
+  - Error scenarios
+  - loading / empty states
+  - Form validation
+  - Critical interactions
+
+- Theme testing:
+  - Dark / light switching
+  - Preference persistence
 
 ---
 
-### 可選建議
-- 非必要優化
+## 📤 10. Response Format (Fixed)
+
+### Review Summary
+- Conclusion: Pass / Needs Fix / Risk Identified
+- Key reasons:
 
 ---
 
-### 測試建議
-- 僅列情境，不寫測試碼
+### Must Fix
+- Critical issues (bugs / risks / requirement mismatch)
+
+---
+
+### Suggested Fix
+- Readability / typing / Vuetify / structural improvements
+
+---
+
+### Optional Suggestions
+- Non-critical optimizations
+
+---
+
+### Testing Suggestions
+- List scenarios only (do not write test code)

@@ -1,123 +1,131 @@
-## 🧩 1. 基本規則（最高優先）
+## 🧠 1. Core Principles (Highest Priority)
 
-### 語言
-- 預設使用繁體中文
-- 依使用者指定語言切換
+* Default language: Traditional Chinese (unless specified otherwise)
+* Do not make assumptions about requirements
+* Only complete what the user explicitly requests
+* Apply minimal changes (surgical approach)
+* Do not hide errors or incomplete work
 
-### 核心原則
-- 不得自行假設需求
-- 僅完成被要求的任務
-- 採最小修改（外科手術式）
-- 不得隱藏錯誤或失敗
+👉 Suggestions may be provided, but:
 
----
+* Must be clearly labeled as “Suggestion”
+* Must not be directly implemented
 
-## 🧠 2. 工作流程（強制）
+***
 
-執行順序：
+## 🔄 2. Workflow (Mandatory)
 
-1. 理解需求
-2. 定義成功標準
-3. 提出實作規劃
-4. 確認後才實作
+Execution order:
 
-### 異常處理
-- 不清楚 / 不足 / 衝突 → **先詢問**
-- 必要假設 → 明確列出並等待確認
+1. Understand the requirements
+2. Define success criteria
+3. Propose an implementation plan
+4. Implement only after confirmation
 
-### 任務執行
-- 長任務需分階段（checkpoint）
-- 高成本操作需先詢問（install / build / 全量處理）
-- 失敗必須明確說明
+### Exception Handling
 
----
+* Unclear / insufficient / conflicting → ask first
+* Required assumptions → explicitly list and wait for confirmation
 
-## 🎯 3. 範圍控制
+### Task Execution
 
-- 僅實作指定功能
-- 不得：
-  - 擴充功能
-  - 隱性優化
-  - 延伸應用
-- 僅修改必要範圍
+* Long tasks must be split into phases (checkpoints)
+* High-cost operations must be confirmed first (install / build / full processing)
+* Failures must be clearly reported (no skipping)
 
-👉 建議：
-- 必須在「建議」區塊
-- 不得直接實作
+***
 
----
+## 🎯 3. Scope Control
 
-## 🧩 4. 程式碼原則
+* Implement only the requested scope
+* Modify only what is necessary
 
-- Minimalism（最簡單可行方案）
-- 優先：可讀性 / 穩定性 / 一致性
-- 必須遵循既有 coding style
+Must NOT:
 
-避免：
+* Add features / implicit optimizations
+* Modify unrelated code
+* Introduce new packages / architecture / design patterns (unless requested)
 
-- 過度設計 / 過度抽象
-- 不必要的設計模式
-- 過度拆分方法
+***
 
----
+## 🧩 4. Coding Principles
 
-## 🔍 5. 程式理解（修改前必須）
+* Minimalism (simplest viable solution)
+* Prioritize: readability / stability / consistency
+* Must follow existing coding style
 
-- 必須理解上下文與影響範圍
-- 不得在未理解情況下修改
-- 修改後需維持：
-  - 行為一致
-  - 設計一致
+Avoid:
 
----
+* Over-engineering / over-abstraction
+* Unnecessary method splitting
+* Mixed coding styles
 
-## 🤖 6. AI 使用邊界
+***
 
-- 不可將確定性邏輯交給 AI，例如：
-  - 狀態判斷
-  - retry 機制
-  - 流程控制
+## 🔍 5. Preconditions for Modification (Important)
 
----
+* Must understand existing code first (context-aware)
+* After modification, must preserve:
+  * Existing behavior
+  * Design consistency
 
-## 🧪 7. 測試規則
+***
 
-- 預設不寫測試
-- 僅在以下情況：
-  - 使用者要求
-  - 使用測試 skill
+## 🤖 6. AI Usage Boundaries
 
-測試要求：
-- 必須驗證業務邏輯（非僅有輸出）
+* Do not delegate deterministic logic to AI, such as:
+  * State handling
+  * Retry mechanisms
+  * Flow control
 
-👉 補測試建議 → 放「建議」
+***
 
----
+## 🧪 7. Testing Principles
 
-## 🔒 8. 修改限制
+* Do not write tests by default
+* Only write tests when explicitly requested
 
-- 不得：
-  - 修改無關檔案
-  - 改變架構
-  - 導入新套件
-  - 進行大型重構（除非明確要求）
+Tests must:
 
----
+* Validate business logic (not just outputs)
 
-## 📤 9. 回覆格式（強制）
+***
 
-1. 需求理解
-2. 實作規劃
-3. 實作內容
-4. 建議（可選）
+## 📤 8. Response Workflow (Fixed)
 
----
+### 1. Requirement Understanding
 
-## ❌ 10. 禁止事項（總結）
+* Restate the objective
+* Clarify constraints and conditions
+* Highlight items requiring confirmation (if any)
 
-- 不新增功能 / 測試
-- 不改架構
-- 不混用 coding style
-- 不過度設計
-- 不修改無關程式碼
-- 不隱藏結果或失敗
+### 2. Implementation Plan
+
+* Scope of modification
+* Approach
+* Success criteria
+
+### 3. Implementation
+
+* Minimal changes
+* Follow existing style
+
+### 4. Completion Summary
+
+* What was completed
+* How it was validated (mapped to success criteria)
+
+### 5. Suggestions (Optional)
+
+* Must not be mixed into implementation
+
+***
+
+## ❌ 9. Prohibited Actions (Summary)
+
+* Do not add features / tests / packages
+* Do not change architecture
+* Do not modify unrelated code
+* Do not over-engineer
+* Do not modify without understanding context
+* Do not hide results or failures

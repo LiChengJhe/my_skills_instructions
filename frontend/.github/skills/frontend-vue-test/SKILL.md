@@ -1,106 +1,112 @@
 ---
 name: frontend-vue-test
-description: Vue 3 + Vuetify 3 + TypeScript Playwright 測試
+description: Vue 3 + Vuetify 3 + TypeScript Playwright testing
 ---
 
-# 前端 Playwright 測試 Skill
+# Frontend Playwright Testing Skill
 
-## 🧠 1. 使用條件（強制）
+## 🧠 1. Usage Conditions (Mandatory)
 
-僅當使用者明確要求時才使用：
+Use this skill only when the user explicitly requests:
 
-- 寫測試 / 補測試
-- Playwright / E2E / UI / 流程測試
-
----
-
-## 🎯 2. 測試原則（最高優先）
-
-- 以「使用者操作流程」為核心
-- 不測試實作細節
-- 測試必須：
-  - 可重複
-  - 獨立
-  - 有明確驗證結果
-
-不得：
-
-- 為覆蓋率寫測試
-- 任意修改 production code（除非允許）
+- Writing tests / adding tests
+- Playwright / E2E / UI / workflow testing
 
 ---
 
-## 🧩 3. 執行流程
+## 🎯 2. Testing Principles (Highest Priority)
 
-1. 確認測試範圍
-2. 確認操作流程
-3. 確認預期結果
-4. 資訊不足 → 先詢問
-5. 再產生測試程式碼
+- Focus on **user interaction flows**
+- Do not test implementation details
+- Tests must be:
+  - Repeatable
+  - Independent
+  - Have clear, verifiable outcomes
+
+Must NOT:
+
+- Write tests solely for coverage
+- Arbitrarily modify production code (unless explicitly allowed)
 
 ---
 
-## ⚙️ 4. 測試框架（固定）
+## 🧩 3. Execution Workflow
 
-- 必須使用 Playwright
-- 不得使用：
+1. Confirm test scope
+2. Define user interaction flow
+3. Define expected results
+4. If information is insufficient → ask first
+5. Then generate test code
+
+---
+
+## ⚙️ 4. Testing Framework (Fixed)
+
+- Must use **Playwright**
+- Must NOT use:
   - Vitest
   - Vue Test Utils
-  - 其他測試工具（除非要求）
+  - Other testing tools (unless explicitly required)
 
 ---
 
-## 🔍 5. 測試覆蓋（核心情境）
+## 🔍 5. Test Coverage (Core Scenarios)
 
-優先涵蓋：
+Prioritize:
 
-- 正常流程
-- 錯誤情境
-- loading / empty
-- 表單與關鍵互動
+- Happy path
+- Error scenarios
+- loading / empty states
+- Forms and critical interactions
 
-（例：click、dialog、table、search、pagination）
+Examples:
 
----
-
-## 🧪 6. Playwright 實作規則
-
-### Selector（穩定優先）
-
-優先使用：
-
-- getByRole
-- getByLabel
-- getByText
-- getByTestId
-
-避免：
-
-- Vuetify 內部 class
-- DOM 結構依賴（nth-child 等）
+- click
+- dialog
+- table
+- search
+- pagination
 
 ---
 
-### 等待策略
+## 🧪 6. Playwright Implementation Rules
 
-- 使用 locator assertion（例如 toBeVisible）
-- 使用條件等待（非 timeout）
-- 不以硬編碼 timeout 作為主要機制
+### Selector (Stability First)
+
+Prefer:
+
+- `getByRole`
+- `getByLabel`
+- `getByText`
+- `getByTestId`
+
+Avoid:
+
+- Vuetify internal classes
+- DOM structure dependencies (e.g., `nth-child`)
 
 ---
 
-### 命名
+### Waiting Strategy
 
-- 測試名稱需描述：
-  - 情境 + 預期結果
+- Use locator assertions (e.g., `toBeVisible`)
+- Use conditional waits (not time-based)
+- Do not rely on hardcoded timeouts as primary mechanism
 
 ---
 
-## 📤 7. 輸出要求
+### Naming
 
-必須說明：
+- Test names must describe:
+  - Scenario + expected result
 
-- 新增測試案例
-- 覆蓋的使用者流程
-- 執行方式
-- 可測性建議（若有）
+---
+
+## 📤 7. Output Requirements
+
+Must include:
+
+- What test cases were added
+- What user flows are covered
+- How to run the tests
+- Testability suggestions (if any)

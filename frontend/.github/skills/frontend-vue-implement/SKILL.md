@@ -1,143 +1,143 @@
 ---
 name: frontend-vue-implement
-description: Vue 3 + Vuetify 3 + TypeScript 前端實作
+description: Vue 3 + Vuetify 3 + TypeScript frontend implementation
 ---
 
-# 前端實作 Skill
+# Frontend Implementation Skill
 
-## 🧠 1. 工作流程（最高優先）
+## 🧠 1. Workflow (Highest Priority)
 
-執行順序：
+Execution order:
 
-1. 理解需求
-2. 定義成功標準
-3. 提出實作規劃
-4. 確認後才實作
+1. Understand requirements
+2. Define success criteria
+3. Propose an implementation plan
+4. Implement only after confirmation
 
-### 異常處理
+### Exception Handling
 
-- 不清楚 / 不足 / 衝突 → 先詢問
-- 不得自行假設需求（必要需列出）
+- Unclear / insufficient / conflicting → ask first
+- Do not assume requirements (list any necessary assumptions)
 
-### 任務原則
+### Task Principles
 
-- 僅完成指定任務
-- 長任務需分階段（checkpoint）
-- 失敗需明確說明
-
----
-
-## 🎯 2. 範圍控制（強制）
-
-- 僅實作需求
-- 採最小修改（外科手術式）
-
-不得：
-
-- 擴充功能
-- 延伸應用
-- 改架構 / API / schema
-- 新增套件 / UI / 狀態工具
-- 修改無關檔案
-- 主動寫測試
+- Only complete explicitly assigned tasks
+- Long tasks must be split into phases (checkpoints)
+- Failures must be clearly stated
 
 ---
 
-## 🧩 3. 技術核心（Vue / TS / Vuetify）
+## 🎯 2. Scope Control (Mandatory)
+
+- Implement only the requested scope
+- Apply minimal changes (surgical approach)
+
+Must NOT:
+
+- Add features
+- Extend beyond scope
+- Change architecture / API / schema
+- Add new packages / UI libraries / state tools
+- Modify unrelated files
+- Proactively write tests
+
+---
+
+## 🧩 3. Technical Core (Vue / TS / Vuetify)
 
 ### Vue / TypeScript
 
 - Composition API + `<script setup lang="ts">`
-- 必須有型別（props / emits / API / form / table）
-- 避免 `any`
+- Types are required for: props / emits / API / form / table
+- Avoid `any`
 
-規則：
+Rules:
 
-- 不改 props
-- computed 無副作用
-- watch 僅用於副作用
-- template 不放複雜邏輯
-- event → `handleXxx`
+- Do not mutate props
+- computed must have no side effects
+- watch only for side effects
+- Avoid complex logic in templates
+- Event handlers → `handleXxx`
 
 ---
 
-### Vuetify（強制）
+### Vuetify (Mandatory)
 
-- 必須使用 Vuetify 元件 / layout / utility
-- 不得：
-  - 重造元件
-  - 用 custom UI 取代
-  - 任意覆寫內部 class
+- Must use Vuetify components / layout / utilities
+- Must NOT:
+  - Rebuild components already provided by Vuetify
+  - Replace with custom UI
+  - Arbitrarily override internal classes
 
 ---
 
 ## 🎨 4. UI / Layout
 
-- 使用 flex / grid（gap）
-- CSS：
+- Use flex / grid (with `gap`)
+- CSS must be:
   - scoped
-  - custom CSS 最小化
+  - minimal custom CSS
 
-禁止：
+Forbidden:
 
 - float
 - table layout
-- 大量 absolute
+- excessive absolute positioning
 
 ---
 
-## 🌗 5. Theme（必要，精簡版）
+## 🌗 5. Theme (Required, Concise)
 
-- 必須支援 dark / light
-- 使用：
-  - Vuetify theme 或 CSS variables
-- 禁止：
-  - 硬編碼顏色
+- Must support dark / light mode
+- Use:
+  - Vuetify theme or CSS variables
+- Forbidden:
+  - Hardcoded colors
 
-基本要求：
+Basic requirements:
 
-- 支援 prefers-color-scheme
-- 可切換並 persist（localStorage 或 state）
-- 顏色需可讀（對比度合理）
+- Support `prefers-color-scheme`
+- Allow switching and persist it (localStorage or state)
+- Colors must remain readable (reasonable contrast)
 
 ---
 
-## 🔌 6. API / 狀態
+## 🔌 6. API / State Handling
 
-必須處理：
+Must handle:
 
 - loading
 - error
-- empty
+- empty states
 
-不得：
+Must NOT:
 
-- 吞錯誤
-- 改 API contract
+- Swallow errors
+- Change API contract
 
-避免：
+Avoid:
 
-- 重複 API 邏輯
-- race condition
-
----
-
-## ♻️ 7. 程式碼品質
-
-- 可讀性優先
-- 命名清楚
-- coding style 一致
-
-避免：
-
-- 過度設計 / 過度抽象
-- 方法過長或過度拆分
+- Duplicated API logic
+- Race conditions
 
 ---
 
-## 📤 8. 回覆格式（固定）
+## ♻️ 7. Code Quality
 
-1. 需求理解
-2. 實作規劃
-3. 實作內容
-4. 建議（可選）
+- Readability first
+- Clear naming
+- Consistent coding style
+
+Avoid:
+
+- Over-engineering / over-abstraction
+- Methods that are too long or overly fragmented
+
+---
+
+## 📤 8. Response Format (Fixed)
+
+1. Requirement Understanding
+2. Implementation Plan
+3. Implementation Details
+4. Suggestions (Optional)

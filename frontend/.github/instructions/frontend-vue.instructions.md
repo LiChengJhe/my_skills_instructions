@@ -1,144 +1,145 @@
 ---
-description: Vue 3 + Vuetify 3 + TypeScript 前端開發指令
+description: Vue 3 + Vuetify 3 + TypeScript Frontend Development Guidelines
 applyTo: "**/*.{vue,ts,tsx,js,jsx}"
 ---
 
-# Vue 前端開發指令
+# Vue Frontend Development Guidelines
 
-## 🧠 1. 工作流程（最高優先）
+## 🧠 1. Workflow (Highest Priority)
 
-- 實作前必須：
-  1. 理解需求
-  2. 定義成功標準
-  3. 提出簡短規劃（範圍 / 方法 / 成功標準）
+- Before implementation, must:
+  1. Understand requirements
+  2. Define success criteria
+  3. Provide a brief plan (scope / approach / success criteria)
 
-- 若有問題：
-  - 不清楚 / 不足 / 衝突 → **先詢問**
-  - 不得自行假設（必要時需列出假設）
+- If there are issues:
+  - Unclear / insufficient / conflicting → **ask first**
+  - Do not make assumptions (list assumptions if necessary)
 
-- 任務原則：
-  - 僅做被要求的事情
-  - 長任務需分階段（checkpoint）
-  - 失敗不可隱藏，需明確說明
-
----
-
-## 🎯 2. 實作範圍控制
-
-- 僅實作需求功能
-- 採「外科手術式修改」（最小變更）
-- 不改動無關程式碼
-- 不擴充功能
-
-👉 建議可提供，但：
-- 必須獨立區塊
-- 不可直接實作
+- Task principles:
+  - Only perform what is requested
+  - Long tasks must be split into phases (checkpoints)
+  - Failures must not be hidden and must be clearly stated
 
 ---
 
-## 🧩 3. 技術基本原則
+## 🎯 2. Implementation Scope Control
+
+- Implement only required functionality
+- Apply “surgical changes” (minimal modification)
+- Do not modify unrelated code
+- Do not expand functionality
+
+👉 Suggestions may be provided, but:
+- Must be in a separate section
+- Must not be directly implemented
+
+---
+
+## 🧩 3. Technical Fundamentals
 
 - Vue 3 Composition API
 - `<script setup lang="ts">`
-- 必須使用 TypeScript
-- 避免 `any`（必要時需說明）
+- TypeScript is required
+- Avoid `any` (must explain if used)
 
 ---
 
-## 🧾 4. 型別規範（全部要有型別）
+## 🧾 4. Typing Rules (All Must Be Typed)
 
-必須定義：
+Must define types for:
 
 - props / emits
-- API response
-- form model
-- table row
+- API responses
+- form models
+- table rows
 
-補充：
+Additional notes:
 
-- nullable / optional 必須明確處理
-- 不濫用 type assertion
+- nullable / optional must be explicitly handled
+- Avoid excessive type assertions
 
 ---
 
-## ⚙️ 5. Vue 使用規則
+## ⚙️ 5. Vue Usage Rules
 
-- 不得修改 props
-- computed：
-  - 僅做衍生資料
-  - 不可有副作用
-- watch：
-  - 僅用於副作用
-- template：
-  - 不放複雜邏輯
-- event 命名：
+- Do not mutate props
+- computed:
+  - For derived state only
+  - Must not have side effects
+- watch:
+  - Only for side effects
+- template:
+  - Avoid complex logic
+- event naming:
   - `handleXxx`
 
 ---
 
-## 🎨 6. UI / Vuetify 原則（強制）
+## 🎨 6. UI / Vuetify Principles (Mandatory)
 
-- **務必使用 Vuetify 元件與其官方 layout / utility**
-- 不得重造 Vuetify 已提供元件
-- 不得使用 custom UI 取代 Vuetify
-- 不得導入其他 UI library（除非明確要求）
+- **Must use Vuetify components and its official layout / utilities**
+- Do not recreate components already provided by Vuetify
+- Do not replace Vuetify with custom UI
+- Do not introduce other UI libraries (unless explicitly requested)
 
 ---
 
 ## 📐 7. Layout / CSS
 
-- 優先 Vuetify utility
-- 使用 flex / grid（gap）
-- CSS 必須 scoped
+- Prefer Vuetify utilities
+- Use flex / grid (with gap)
+- CSS must be scoped
 
-禁止：
+Forbidden:
 
 - float
 - table layout
-- 大量 absolute
+- excessive absolute positioning
 
 ---
 
-## 🌗 8. Theme（必要）
+## 🌗 8. Theme (Required)
 
-- 必須支援 dark / light
-- 使用：
-  - Vuetify theme 或 CSS variables
-- 禁止：
-  - 硬編碼顏色
-
----
-
-## 🔌 9. API / 狀態
-
-- 不改 API contract
-- 必須處理：
-  - loading / error / empty
-- 不得吞錯誤
-- 若已有 Pinia → 必須沿用
+- Must support dark / light mode
+- Use:
+  - Vuetify theme or CSS variables
+- Forbidden:
+  - Hardcoded colors
 
 ---
 
-## 🤖 10. AI 使用限制
+## 🔌 9. API / State Handling
 
-- 不可把「確定性邏輯」交給 AI
-  - 例如：條件判斷 / 流程控制
-
----
-
-## 📤 11. 回覆格式（固定）
-
-1. 需求理解
-2. 實作規劃
-3. 實作
-4. 建議（可選）
+- Do not change API contract
+- Must handle:
+  - loading / error / empty states
+- Do not swallow errors
+- If Pinia is already used → must reuse it
 
 ---
 
-## ❌ 禁止事項（總結）
+## 🤖 10. AI Usage Constraints
 
-- 不新增功能
-- 不新增套件 / UI / 狀態工具
-- 不修改無關程式碼
-- 不過度設計
-- 不隱藏錯誤
+- Do not delegate deterministic logic to AI, such as:
+  - Conditional logic
+  - Flow control
+
+---
+
+## 📤 11. Response Format (Fixed)
+
+1. Requirement Understanding
+2. Implementation Plan
+3. Implementation
+4. Suggestions (Optional)
+
+---
+
+## ❌ Prohibited Actions (Summary)
+
+- Do not add features
+- Do not introduce new packages / UI / state tools
+- Do not modify unrelated code
+- Do not over-engineer
+- Do not hide errors
