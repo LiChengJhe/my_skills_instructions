@@ -48,7 +48,6 @@ Must NOT:
 
 - Add features / implicit optimizations
 - Modify unrelated code
-- Change API / schema / contract
 - Introduce new packages / architecture (unless requested)
 - Perform large-scale refactoring (unless explicitly required)
 
