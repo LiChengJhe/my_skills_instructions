@@ -113,7 +113,6 @@ Must handle:
 Must NOT:
 
 - Swallow errors
-- Change API contract
 
 Avoid:
 

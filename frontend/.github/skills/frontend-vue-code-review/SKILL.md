@@ -112,7 +112,6 @@ Check:
 - Are errors swallowed?
 - Are there race conditions?
 - Is API logic duplicated?
-- Is API contract changed?
 
 ---
 

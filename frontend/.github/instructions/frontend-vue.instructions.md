@@ -111,7 +111,6 @@ Forbidden:
 
 ## 🔌 9. API / State Handling
 
-- Do not change API contract
 - Must handle:
   - loading / error / empty states
 - Do not swallow errors
