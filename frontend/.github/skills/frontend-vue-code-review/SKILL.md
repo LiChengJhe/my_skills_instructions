@@ -1,184 +1,124 @@
 ---
 name: frontend-vue-code-review
-description: Vue 3 + Vuetify 3 + TypeScript frontend code review
+description: Vue3 + Vuetify3 + TS review
 ---
 
-# Frontend Code Review Skill
+## principle
+- requirement first
+- highlight critical only
+- classify:
+  - must-fix (bug/risk)
+  - suggested (quality)
+  - optional (opt)
 
-## 🧠 1. Review Principles (Highest Priority)
+## workflow
+order:
+- requirement
+- core (vue/ts/ui)
+- ui/layout
+- api/state
+- readability
+- performance
+- testing
 
-- Prioritize **requirement correctness** first, then technical quality
-- Only highlight **critical issues**, avoid noise
-- Classify issues into:
-  - Must Fix (bugs / risks)
-  - Suggested Fix (quality / maintainability)
-  - Optional (optimization)
+## requirement
+check:
+- meets requirement
+- too much / too little
+- deviation
+- hidden assumptions
 
----
+fail → must-fix
 
-## 🔍 2. Review Workflow (Fixed Order)
+## core
 
-1. Requirement alignment
-2. Core technologies (Vue / TS / Vuetify)
-3. UI / Layout
-4. API / State handling
-5. Readability / Maintainability
-6. Performance
-7. Testing suggestions
+vue:
+- composition api
+- script setup + ts
+- no prop mutation
+- no side effect in computed
+- avoid watch abuse
+- no complex template logic
 
----
+ts:
+- no overuse any
+- must type:
+  - props/emits
+  - api
+  - form/table
+- handle nullable
+- avoid unsafe assertion
 
-## 🎯 3. Requirement Alignment (Most Important)
+vuetify:
+- must use
+- no rebuild / replace
+- no hardcoded color
 
-Check:
+## ui
+- flex/grid
+- scoped css
+- minimal custom css
 
-- Whether it meets requirements
-- Whether it:
-  - Does too much
-  - Does too little
-  - Deviates from requirements
-- Whether there are undocumented assumptions
+forbidden:
+- float
+- table layout
+- excessive absolute
 
-👉 If this stage fails → directly mark as **Needs Fix**
+theme:
+- dark/light required
+- no hardcoded color
+- proper contrast
+- support prefers-color-scheme + persist
 
----
+## api/state
+must handle:
+- loading / error / empty
 
-## 🧩 4. Core Technology Checks
+check:
+- error swallowed?
+- race condition?
+- duplicated api?
 
-### Vue
+## readability
+- clear naming
+- reasonable method size
+- no duplication
+- no over-engineering
+- no unnecessary abstraction
 
-- Must use:
-  - Composition API
-  - `<script setup lang="ts">`
-- Must NOT:
-  - Mutate props
-- Avoid:
-  - Side effects in computed
-  - Overuse of watch
-  - Complex logic in template
+## performance
+- avoid:
+  - unnecessary rerender
+  - heavy template logic
+  - deep watch abuse
 
----
+list:
+- need pagination / virtual scroll?
 
-### TypeScript
+## testing
+- suggestion only
+- priority:
+  - happy path
+  - error
+  - loading/empty
+  - form validation
+  - critical interaction
+  - theme switch + persist
 
-- Do not overuse `any`
-- Must define types for:
-  - props / emits
-  - API responses
-  - form / table data
-- Nullable must be handled properly
-- Avoid unsafe assertions
+## output
 
----
+summary:
+- conclusion: pass / needs-fix / risk
+- key reasons
 
-### Vuetify (Mandatory)
+must-fix:
+- bugs / risks / requirement mismatch
 
-- Must use Vuetify components / layout / utilities
-- Must NOT:
-  - Rebuild existing components
-  - Replace with custom UI
-- Must NOT hardcode colors (use theme / tokens)
+suggested:
+- quality / typing / structure
 
----
+optional:
+- optimization
 
-## 🎨 5. UI / Layout
-
-- Use flex / grid (avoid float / table)
-- CSS:
-  - Must be scoped
-  - Minimize custom CSS
-- Must NOT:
-  - Use excessive absolute positioning
-
-### Theme Checks
-
-- Support dark / light mode
-- No hardcoded colors
-- Maintain proper contrast
-- Support `prefers-color-scheme` + persistence
-
----
-
-## 🔌 6. API / State Handling
-
-Must handle:
-
-- loading
-- error
-- empty states
-
-Check:
-
-- Are errors swallowed?
-- Are there race conditions?
-- Is API logic duplicated?
-
----
-
-## ♻️ 7. Readability / Maintainability
-
-- Clear naming
-- Methods are not too long and not overly fragmented
-- No duplicated logic
-- No over-engineering
-
-Check:
-
-- Does it impact props / emits / API compatibility?
-- Any unnecessary abstraction (composable / patterns)?
-
----
-
-## ⚡ 8. Performance
-
-- Avoid:
-  - Unnecessary re-renders
-  - Heavy computation in templates
-  - Overuse of deep watch
-- list / table:
-  - Should pagination / virtual scroll be applied?
-
----
-
-## 🧪 9. Testing Suggestions (Playwright)
-
-- Provide suggestions only (do not write test code)
-- Prioritize:
-
-  - Happy path
-  - Error scenarios
-  - loading / empty states
-  - Form validation
-  - Critical interactions
-
-- Theme testing:
-  - Dark / light switching
-  - Preference persistence
-
----
-
-## 📤 10. Response Format (Fixed)
-
-### Review Summary
-- Conclusion: Pass / Needs Fix / Risk Identified
-- Key reasons:
-
----
-
-### Must Fix
-- Critical issues (bugs / risks / requirement mismatch)
-
----
-
-### Suggested Fix
-- Readability / typing / Vuetify / structural improvements
-
----
-
-### Optional Suggestions
-- Non-critical optimizations
-
----
-
-### Testing Suggestions
-- List scenarios only (do not write test code)
+testing:
+- scenarios only

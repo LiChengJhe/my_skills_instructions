@@ -1,144 +1,105 @@
 ---
-description: Vue 3 + Vuetify 3 + TypeScript Frontend Development Guidelines
+description: Vue3 + Vuetify3 + TS guidelines
 applyTo: "**/*.{vue,ts,tsx,js,jsx}"
 ---
 
-# Vue Frontend Development Guidelines
+## workflow
+order:
+- understand
+- success criteria
+- plan
+- confirm → implement
 
-## 🧠 1. Workflow (Highest Priority)
+rules:
+- unclear/conflict → ask
+- no assumptions (list if needed)
+- only requested tasks
+- long task → split
+- failures → report
 
-- Before implementation, must:
-  1. Understand requirements
-  2. Define success criteria
-  3. Provide a brief plan (scope / approach / success criteria)
+## scope
+- minimal change (surgical)
+- only required scope
+- no:
+  - extra features
+  - scope expansion
+  - unrelated modification
 
-- If there are issues:
-  - Unclear / insufficient / conflicting → **ask first**
-  - Do not make assumptions (list assumptions if necessary)
+suggestion:
+- separate section only
+- must not implement
 
-- Task principles:
-  - Only perform what is requested
-  - Long tasks must be split into phases (checkpoints)
-  - Failures must not be hidden and must be clearly stated
+## tech
+- vue3 composition api
+- script setup + ts
+- no any (explain if used)
 
----
+## typing
+- must type:
+  - props / emits
+  - api response
+  - form model
+  - table row
 
-## 🎯 2. Implementation Scope Control
+rules:
+- handle nullable/optional
+- avoid type assertion
 
-- Implement only required functionality
-- Apply “surgical changes” (minimal modification)
-- Do not modify unrelated code
-- Do not expand functionality
+## vue
+- no prop mutation
 
-👉 Suggestions may be provided, but:
-- Must be in a separate section
-- Must not be directly implemented
+computed:
+- derived only
+- no side effects
 
----
+watch:
+- side effects only
 
-## 🧩 3. Technical Fundamentals
+template:
+- no complex logic
 
-- Vue 3 Composition API
-- `<script setup lang="ts">`
-- TypeScript is required
-- Avoid `any` (must explain if used)
+event:
+- handler: handleXxx
+- emit: kebab-case
 
----
+## ui (vuetify)
+- must use vuetify
+- no custom replacement
+- no other ui lib
 
-## 🧾 4. Typing Rules (All Must Be Typed)
+## layout
+- use vuetify utilities
+- flex/grid + gap
+- scoped css
 
-Must define types for:
-
-- props / emits
-- API responses
-- form models
-- table rows
-
-Additional notes:
-
-- nullable / optional must be explicitly handled
-- Avoid excessive type assertions
-
----
-
-## ⚙️ 5. Vue Usage Rules
-
-- Do not mutate props
-- computed:
-  - For derived state only
-  - Must not have side effects
-- watch:
-  - Only for side effects
-- template:
-  - Avoid complex logic
-- event naming:
-  - `handleXxx`
-
----
-
-## 🎨 6. UI / Vuetify Principles (Mandatory)
-
-- **Must use Vuetify components and its official layout / utilities**
-- Do not recreate components already provided by Vuetify
-- Do not replace Vuetify with custom UI
-- Do not introduce other UI libraries (unless explicitly requested)
-
----
-
-## 📐 7. Layout / CSS
-
-- Prefer Vuetify utilities
-- Use flex / grid (with gap)
-- CSS must be scoped
-
-Forbidden:
-
+forbidden:
 - float
 - table layout
-- excessive absolute positioning
+- excessive absolute
 
----
+## theme
+- support dark/light
+- use theme / css vars
+- no hardcoded color
 
-## 🌗 8. Theme (Required)
+## api/state
+- must handle:
+  - loading
+  - error
+  - empty
 
-- Must support dark / light mode
-- Use:
-  - Vuetify theme or CSS variables
-- Forbidden:
-  - Hardcoded colors
+- no silent error
+- reuse pinia if exists
 
----
+## response
+1. understanding
+2. plan
+3. implementation
+3. suggestions (opt)
 
-## 🔌 9. API / State Handling
-
-- Must handle:
-  - loading / error / empty states
-- Do not swallow errors
-- If Pinia is already used → must reuse it
-
----
-
-## 🤖 10. AI Usage Constraints
-
-- Do not delegate deterministic logic to AI, such as:
-  - Conditional logic
-  - Flow control
-
----
-
-## 📤 11. Response Format (Fixed)
-
-1. Requirement Understanding
-2. Implementation Plan
-3. Implementation
-4. Suggestions (Optional)
-
----
-
-## ❌ Prohibited Actions (Summary)
-
-- Do not add features
-- Do not introduce new packages / UI / state tools
-- Do not modify unrelated code
-- Do not over-engineer
-- Do not hide errors
+## prohibited
+- no feature creep
+- no new pkg/ui/state
+- no unrelated changes
+- no over-engineering
+- no hidden errors

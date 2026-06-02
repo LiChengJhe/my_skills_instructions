@@ -1,171 +1,125 @@
 ---
-description: General C# Development Guidelines
+description: csharp development guidelines
 applyTo: "**/*.cs"
 ---
 
-# C# Development Guidelines
+## core
+- no assumptions
+- only requested tasks
+- minimal change (surgical)
+- no hidden errors
 
-## 🧠 1. Core Principles (Highest Priority)
+suggestion:
+- separate section only
+- must not implement
 
-- Do not make assumptions about requirements (must list and confirm if necessary)
-- Only complete explicitly assigned tasks (no extension)
-- Apply minimal changes (surgical approach)
-- Do not hide errors or incomplete work
+## output
+- default: code only
+- no explanation unless asked
+- prefer bullets
+- no extra text
 
-👉 Suggestions may be provided, but:
-- Must be clearly labeled as “Suggestion”
-- Must not be directly implemented
+## workflow
+order:
+- understand
+- success criteria
+- plan
+- confirm → implement
 
----
+rules:
+- unclear/conflict → ask
+- assumptions → list + wait
+- long task → split
+- high cost → confirm
+- failures → report
 
-## 🔄 2. Workflow (Mandatory)
+## scope
+- only required scope
+- modify minimal
 
-Execution order:
+no:
+- feature / implicit optimization
+- unrelated changes
+- new pkg / architecture
+- large refactor
 
-1. Understand requirements
-2. Define success criteria
-3. Propose implementation plan
-4. Implement only after confirmation
+## precondition
+- must understand context
+- preserve:
+  - behavior
+  - design
 
-### Exception Handling
+## coding
+- minimal / readable / stable / maintainable
+- follow existing style
 
-- Unclear / insufficient / conflicting → ask first
+avoid:
+- over-engineering
+- unnecessary abstraction
+- unnecessary split
+- duplicated logic
 
-### Task Execution
+## style
 
-- Long tasks must be divided into phases (checkpoints)
-- High-cost operations must be confirmed first (build / full processing / large datasets)
-- Failures must be explicitly reported (no skipping)
+naming:
+- PascalCase: class/method/property
+- camelCase: variable/param
+- _camelCase: private field
 
----
+rules:
+- meaningful naming
+- avoid magic values (extract if needed)
+- prefer explicit type (avoid var abuse)
 
-## 🎯 3. Scope Control
+## error
+- guard:
+  - external input
+  - nullable
 
-- Implement only the requested scope
-- Modify only what is necessary
+no:
+- swallow exception
+- exception as flow
 
-Must NOT:
+catch:
+- handle / log / rethrow
 
-- Add features / implicit optimizations
-- Modify unrelated code
-- Introduce new packages / architecture (unless requested)
-- Perform large-scale refactoring (unless explicitly required)
+## linq
+- readability first
+- avoid long chains
+- break into variables
+- no side effects
+- beware multiple enumeration
+- handle null
 
----
+## async
+- async/await only
+- no .Result / .Wait()
+- suffix Async
+- pass CancellationToken if supported
+- no unnecessary Task wrap
 
-## 🔍 4. Preconditions for Modification
+## ai-boundary
+- verify critical logic:
+  - state
+  - retry
+  - flow
 
-- Must first understand existing code (context-aware)
-- After modification, must maintain:
-  - Behavioral consistency
-  - Design consistency
+## testing
+- default: none
+- only if requested
+- validate business logic
 
----
+## response
+1. understanding
+2. plan
+3. implementation
+4. summary
+5. suggestion (opt)
 
-## 🧩 5. Coding Principles
-
-- Minimalism (simplest viable solution)
-- Prioritize: readability / stability / maintainability
-- Must follow existing coding style
-
-Avoid:
-
-- Over-engineering / unnecessary abstraction
-- Unnecessary method splitting
-- Duplicated logic
-
----
-
-## 🎯 6. Coding Style (Critical)
-
-- Follow existing style (no mixing)
-
-### Naming
-
-- PascalCase → Class / Method / Property
-- camelCase → variable / parameter
-- `_camelCase` → private field
-
-### Rules
-
-- Names must reflect business meaning
-- Avoid magic strings / numbers (extract constants if needed)
-- Prefer explicit types (avoid overusing `var`)
-
----
-
-## ⚠️ 7. Error Handling
-
-- Must guard against:
-  - External input
-  - Nullable values
-
-Must NOT:
-
-- Swallow exceptions
-- Use exceptions for control flow
-
-`catch` must:
-
-- Handle / log / rethrow
-
----
-
-## 🔍 8. LINQ / Data Handling
-
-- Readability first
-- Avoid overly long chains
-- Break complex logic into intermediate variables
-- No side effects
-- Be cautious of multiple enumeration
-- Handle null explicitly
-
----
-
-## ⏱️ 9. Asynchronous Programming
-
-- Use async/await
-- Do not use `.Result` or `.Wait()`
-- Async methods must end with `Async`
-- Pass `CancellationToken` when cancellation is supported
-- Avoid unnecessary Task wrapping
-
----
-
-## 🤖 10. AI Usage Boundaries
-
-- Do not delegate deterministic logic to AI, such as:
-  - State handling
-  - Retry logic
-  - Flow control
-
----
-
-## 🧪 11. Testing Rules
-
-- Do not write tests by default
-- Only write tests when explicitly requested
-
-Tests must:
-
-- Validate business logic (not just outputs)
-
----
-
-## 📤 12. Response Requirements
-
-- If unclear → ask first
-- Before modification → provide a plan
-- Output only necessary content
-- Suggestions must be in a separate section
-
----
-
-## ❌ 13. Prohibited Actions (Summary)
-
-- Do not add features / tests
-- Do not introduce new packages / architecture
-- Do not modify unrelated code
-- Do not over-engineer
-- Do not modify without understanding context
-- Do not hide results or failures
+## prohibited
+- no feature/test/pkg
+- no architecture change
+- no unrelated changes
+- no over-engineering
+- no modify without understanding
+- no hidden errors

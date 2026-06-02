@@ -1,142 +1,110 @@
 ---
 name: frontend-vue-implement
-description: Vue 3 + Vuetify 3 + TypeScript frontend implementation
+description: Vue3 + Vuetify3 + TS implementation
 ---
 
-# Frontend Implementation Skill
+## workflow
+order:
+- understand
+- success criteria
+- plan
+- confirm → implement
 
-## 🧠 1. Workflow (Highest Priority)
+rules:
+- unclear/conflict → ask
+- no assumptions (list if needed)
+- only requested tasks
+- long task → split
+- failures → report
 
-Execution order:
+## scope
+- minimal change (surgical)
+- only required scope
 
-1. Understand requirements
-2. Define success criteria
-3. Propose an implementation plan
-4. Implement only after confirmation
+no:
+- feature creep
+- scope expansion
+- architecture/api/schema change
+- new pkg/ui/state
+- unrelated modification
+- auto test generation
 
-### Exception Handling
+## core
 
-- Unclear / insufficient / conflicting → ask first
-- Do not assume requirements (list any necessary assumptions)
+vue:
+- composition api
+- script setup + ts
+- no prop mutation
 
-### Task Principles
+computed:
+- derived only
+- no side effects
 
-- Only complete explicitly assigned tasks
-- Long tasks must be split into phases (checkpoints)
-- Failures must be clearly stated
+watch:
+- side effects only
 
----
+template:
+- no complex logic
 
-## 🎯 2. Scope Control (Mandatory)
+event:
+- handler: handleXxx
+- emit: kebab-case
 
-- Implement only the requested scope
-- Apply minimal changes (surgical approach)
+ts:
+- must type:
+  - props/emits
+  - api
+  - form/table
 
-Must NOT:
+- no any (explain if used)
+- handle nullable
+- avoid unsafe assertion
 
-- Add features
-- Extend beyond scope
-- Change architecture / API / schema
-- Add new packages / UI libraries / state tools
-- Modify unrelated files
-- Proactively write tests
+vuetify:
+- must use
+- no rebuild / replace
+- no override internal styles
 
----
+## ui
+- flex/grid + gap
+- scoped css
+- minimal custom css
 
-## 🧩 3. Technical Core (Vue / TS / Vuetify)
-
-### Vue / TypeScript
-
-- Composition API + `<script setup lang="ts">`
-- Types are required for: props / emits / API / form / table
-- Avoid `any`
-
-Rules:
-
-- Do not mutate props
-- computed must have no side effects
-- watch only for side effects
-- Avoid complex logic in templates
-- Event handlers → `handleXxx`
-
----
-
-### Vuetify (Mandatory)
-
-- Must use Vuetify components / layout / utilities
-- Must NOT:
-  - Rebuild components already provided by Vuetify
-  - Replace with custom UI
-  - Arbitrarily override internal classes
-
----
-
-## 🎨 4. UI / Layout
-
-- Use flex / grid (with `gap`)
-- CSS must be:
-  - scoped
-  - minimal custom CSS
-
-Forbidden:
-
+forbidden:
 - float
 - table layout
-- excessive absolute positioning
+- excessive absolute
 
----
+## theme
+- dark/light required
+- use theme / css vars
+- no hardcoded color
+- support prefers-color-scheme + persist
+- ensure contrast
 
-## 🌗 5. Theme (Required, Concise)
-
-- Must support dark / light mode
-- Use:
-  - Vuetify theme or CSS variables
-- Forbidden:
-  - Hardcoded colors
-
-Basic requirements:
-
-- Support `prefers-color-scheme`
-- Allow switching and persist it (localStorage or state)
-- Colors must remain readable (reasonable contrast)
-
----
-
-## 🔌 6. API / State Handling
-
-Must handle:
-
+## api/state
+must handle:
 - loading
 - error
-- empty states
+- empty
 
-Must NOT:
+rules:
+- no silent error
+- avoid duplication
+- avoid race condition
 
-- Swallow errors
+## quality
+- readable
+- clear naming
+- consistent style
 
-Avoid:
+avoid:
+- over-engineering
+- over-abstraction
+- oversized / fragmented methods
 
-- Duplicated API logic
-- Race conditions
-
----
-
-## ♻️ 7. Code Quality
-
-- Readability first
-- Clear naming
-- Consistent coding style
-
-Avoid:
-
-- Over-engineering / over-abstraction
-- Methods that are too long or overly fragmented
-
----
-
-## 📤 8. Response Format (Fixed)
-
-1. Requirement Understanding
-2. Implementation Plan
-3. Implementation Details
-4. Suggestions (Optional)
+## response
+1. understanding
+2. plan
+3. implementation
+4. suggestions (opt)
