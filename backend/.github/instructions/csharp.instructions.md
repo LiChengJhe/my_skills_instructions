@@ -98,12 +98,6 @@ catch:
 - pass CancellationToken if supported
 - no unnecessary Task wrap
 
-## ai-boundary
-- verify critical logic:
-  - state
-  - retry
-  - flow
-
 ## testing
 - default: none
 - only if requested
