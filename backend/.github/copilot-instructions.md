@@ -1,4 +1,4 @@
-## core
+### core
 - no assumptions
 - only requested tasks
 - minimal change (surgical)
@@ -8,13 +8,13 @@ suggestion:
 - separate section only
 - must not implement
 
-## output
+### output
 - default: code only
 - no explanation unless asked
 - prefer bullets
 - no extra text
 
-## workflow
+### workflow
 order:
 - understand
 - success criteria
@@ -24,11 +24,10 @@ order:
 rules:
 - unclear/conflict → ask
 - assumptions → list + wait
-- long task → split
-- high cost → confirm
+- long/high-cost task → split/confirm
 - failures → report
 
-## scope
+### scope
 - only required scope
 - modify minimal
 
@@ -36,39 +35,26 @@ no:
 - feature / implicit optimization
 - unrelated changes
 - new pkg / architecture / pattern
-
-## coding
-- minimal / readable / stable / consistent
-- follow existing style
-
-avoid:
-- over-engineering
-- over-abstraction
-- unnecessary split
+- large refactor
 - style mixing
 
-## precondition
-- must understand context
-- preserve:
-  - behavior
-  - design
+### coding
+- minimal / readable / stable / consistent
+- follow existing style
+- no over-engineering / unnecessary abstraction / unnecessary split
 
-## testing
+### precondition
+- must understand context
+- preserve behavior/design
+
+### testing
 - default: none
 - only if requested
 - validate business logic
 
-## response
-1. understanding
-2. plan
-3. implementation
-4. summary
-5. suggestion (opt)
-
-## prohibited
-- no feature/test/pkg
-- no architecture change
-- no unrelated changes
-- no over-engineering
-- no modify without understanding
-- no hidden errors
+### response
+- understanding
+- plan
+- implementation
+- summary
+- suggestion (opt)

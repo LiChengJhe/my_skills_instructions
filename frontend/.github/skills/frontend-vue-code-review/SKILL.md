@@ -3,25 +3,27 @@ name: frontend-vue-code-review
 description: Vue3 + Vuetify3 + TS review
 ---
 
-## principle
-- requirement first
-- highlight critical only
-- classify:
-  - must-fix (bug/risk)
-  - suggested (quality)
-  - optional (opt)
+### core
+- use common rules from copilot-instructions.md
+- use frontend rules from frontend-vue.instructions.md
+- this skill = review only
 
-## workflow
+### principle
+- requirement first
+- critical only
+- classify: must-fix / suggested / optional
+
+### workflow
 order:
 - requirement
-- core (vue/ts/ui)
+- correctness
 - ui/layout
 - api/state
 - readability
 - performance
 - testing
 
-## requirement
+### requirement
 check:
 - meets requirement
 - too much / too little
@@ -30,89 +32,48 @@ check:
 
 fail → must-fix
 
-## core
+### review-checks
+correctness:
+- vue/ts/vuetify rule violations
+- null/optional handling
+- prop mutation
+- computed/watch misuse
+- template complexity
 
-vue:
-- composition api
-- script setup + ts
-- no prop mutation
-- no side effect in computed
-- avoid watch abuse
-- no complex template logic
+api-state:
+- loading/error/empty handled
+- no swallowed error
+- no race / duplicated api
 
-ts:
-- no overuse any
-- must type:
-  - props/emits
-  - api
-  - form/table
-- handle nullable
-- avoid unsafe assertion
-
-vuetify:
-- must use
-- no rebuild / replace
+ui-theme:
+- vuetify used
+- no rebuild/custom replacement
 - no hardcoded color
+- dark/light + contrast
 
-## ui
-- flex/grid
-- scoped css
-- minimal custom css
-
-forbidden:
-- float
-- table layout
-- excessive absolute
-
-theme:
-- dark/light required
-- no hardcoded color
-- proper contrast
-- support prefers-color-scheme + persist
-
-## api/state
-must handle:
-- loading / error / empty
-
-check:
-- error swallowed?
-- race condition?
-- duplicated api?
-
-## readability
-- clear naming
-- reasonable method size
+readability:
+- naming / method size
 - no duplication
 - no over-engineering
 - no unnecessary abstraction
 
-## performance
-- avoid:
-  - unnecessary rerender
-  - heavy template logic
-  - deep watch abuse
+performance:
+- no unnecessary rerender
+- no heavy template logic
+- no deep watch abuse
+- list: pagination / virtual scroll?
 
-list:
-- need pagination / virtual scroll?
-
-## testing
+### testing
 - suggestion only
-- priority:
-  - happy path
-  - error
-  - loading/empty
-  - form validation
-  - critical interaction
-  - theme switch + persist
+- scenarios: happy / error / loading-empty / form / critical interaction / theme persist
 
-## output
-
+### output
 summary:
 - conclusion: pass / needs-fix / risk
 - key reasons
 
 must-fix:
-- bugs / risks / requirement mismatch
+- bug / risk / requirement mismatch
 
 suggested:
 - quality / typing / structure

@@ -3,77 +3,53 @@ name: frontend-vue-test
 description: Vue3 + Vuetify3 + TS playwright e2e
 ---
 
-## usage
+### core
+- use common rules from copilot-instructions.md
+- use frontend rules from frontend-vue.instructions.md
+- this skill = Playwright E2E only
+
+### usage
 only when:
-- user requests playwright/e2e/ui test
+- user requests playwright / e2e / ui test
 
-## principle
-- focus: user flow
-- no implementation detail testing
-- test must:
-  - repeatable
-  - independent
-  - verifiable
+### principle
+- test user flow, not implementation
+- repeatable / independent / verifiable
+- no coverage-only tests
+- no prod code change unless allowed
 
-no:
-- test for coverage only
-- modify prod code (unless allowed)
-
-## workflow
+### workflow
 order:
 - confirm scope
-- define flow
-- define expected result
+- define flow + expected result
 - insufficient → ask
 - generate test
 
-## framework
+### framework
 - playwright only
+- no vitest / vue-test-utils / other tools
 
-no:
-- vitest
-- vue-test-utils
-- other tools
-
-## coverage
+### coverage
 priority:
-- happy path
-- error
-- loading/empty
-- form
-- critical interaction
+- happy / error / loading-empty / form / critical interaction
 
 common:
-- click
-- dialog
-- table
-- search
-- pagination
+- click / dialog / table / search / pagination
 
-## playwright
-
+### playwright
 selector:
-- prefer:
-  - getByRole
-  - getByLabel
-  - getByText
-- fallback:
-  - getByTestId
-
-avoid:
-- vuetify internal class
-- dom structure (nth-child)
+- prefer: getByRole / getByLabel / getByText
+- fallback: getByTestId
+- avoid: vuetify internal class / nth-child
 
 wait:
-- locator assertion (toBeVisible)
-- conditional wait
+- use locator assertion / conditional wait
 - no hard wait
 
 naming:
 - scenario + expected
 
-## output
-must include:
+### output
 - test cases added
 - flows covered
 - how to run

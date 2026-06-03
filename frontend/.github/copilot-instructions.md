@@ -1,16 +1,18 @@
-## rules
+### core
 - no assumptions
-- only requested scope
+- requested scope only
 - minimal change (surgical)
 - no hidden errors
+- understand context before change
+- preserve behavior/design
 
-## output
+### output
 - default: code only
 - no explanation unless asked
 - prefer bullets
 - no extra text
 
-## workflow
+### workflow
 order:
 - understand
 - success criteria
@@ -20,62 +22,35 @@ order:
 rules:
 - unclear/conflict → ask
 - assumptions → list + wait
-- long task → split
-- high cost → confirm
+- long/high-cost task → split/confirm
 - failures → report
 
-## scope
-- only required
-- no:
-  - extra features
-  - implicit optimization
-  - scope expansion
+### scope
+no:
+- feature creep / implicit optimization
+- unrelated changes
+- new packages / architecture
+- large refactor
+- style mixing
+- image generation
 
 suggestion:
 - separate section only
+- must not implement
 
-## coding
+### coding
 - minimal / readable / consistent
 - follow existing style
+- no over-engineering / unnecessary abstraction
 
-avoid:
-- over-engineering
-- unnecessary patterns
-- excessive abstraction
-
-## understanding
-- must know context + impact
-- preserve:
-  - behavior
-  - design
-
-
-## testing
+### testing
 - default: none
-- only if:
-  - requested
-  - testing skill
+- only if requested or testing skill
+- validate business logic
 
-- validate logic
-- suggestion only
-
-## constraints
-- no unrelated changes
-- no architecture change
-- no new packages
-- no large refactor
-
-## response
-1. understanding
-2. plan
-3. implementation
-4. suggestion (opt)
-
-## prohibited
-- no feature creep
-- no extra tests
-- no style mixing
-- no over-engineering
-- no hidden errors
-- no missing verification
-- no image generation
+### response
+- understanding
+- plan
+- implementation
+- summary
+- suggestion (opt)

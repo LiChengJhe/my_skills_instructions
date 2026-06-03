@@ -3,15 +3,17 @@ name: csharp-code-review
 description: C# review
 ---
 
-## principle
-- requirement first
-- highlight critical only
-- classify:
-  - must-fix (bug/risk)
-  - suggested (quality)
-  - optional (opt)
+### use
+- common: copilot-instructions.md
+- csharp: csharp.instructions.md
+- mode: review only
 
-## workflow
+### principle
+- requirement first
+- critical only
+- classify: must-fix / suggested / optional
+
+### workflow
 order:
 - requirement
 - correctness
@@ -20,7 +22,7 @@ order:
 - performance
 - testing
 
-## requirement
+### requirement
 check:
 - meets requirement
 - too much / too little
@@ -29,50 +31,34 @@ check:
 
 fail → must-fix
 
-## correctness
-check:
-- null / boundary handled
-- logic correct
-- exception:
-  - swallowed?
-  - misuse?
-- async:
-  - blocking?
-  - incorrect usage?
+### review-checks
+correctness:
+- null / boundary / logic
+- exception swallowed / misuse
+- async blocking / misuse
 
-## readability
-- clear naming (business aligned)
+readability:
+- naming / method size
+- condition simplification
+- linq complexity
+- style consistency
 
-method:
-- not too long
-- not over-fragmented
+maintainability:
+- duplication
+- over-engineering / abstraction
+- compatibility impact
 
-check:
-- simplify condition?
-- linq too complex?
-- follow existing style?
-
-## maintainability
-- duplicated logic?
-- over-engineering / abstraction?
-- compatibility impact?
-
-## performance
-check:
+performance:
 - multiple enumeration
 - unnecessary ToList/ToArray
 - blocking async
 - resource release
 
-## testing
+### testing
 - suggestion only
-- priority:
-  - happy path
-  - boundary
-  - failure
+- scenarios: happy / boundary / failure
 
-## output
-
+### output
 summary:
 - conclusion: pass / needs-fix / risk
 - key reasons
