@@ -3,44 +3,45 @@ name: csharp-test
 description: C# unit testing
 ---
 
-### use
-- common: copilot-instructions.md
-- csharp: csharp.instructions.md
-- mode: test only
+mode: test
 
-### usage
-only when:
-- user requests test / unit test / coverage
+trigger:
+- test / unit test / coverage
 
-### principle
+principle:
 - behavior over implementation
 - repeatable / independent / verifiable
-- no coverage-only tests
-- no prod code change unless approved
+- no coverage-only
+- no prod change
 
-### workflow
-order:
-- confirm scope / framework / dependency
-- insufficient → ask
-- generate test
+workflow:
+- confirm scope/framework/deps → ask if insufficient → generate
+- single solution path
 
-### coverage
-priority:
+coverage:
 - happy / boundary / failure
 
-### design
+design:
 - AAA
-- name: scenario + behavior + expected
+- naming: scenario + behavior + expected
 - data: minimal / meaningful
-- single concern per test
+- single concern
 - no inter-test dependency
 
 mock:
-- external only: IO / time / network / db / service
-- no mock for sake of mocking
+- external only (io/time/network/db/service)
+- no unnecessary mocking
 
-### output
-- test cases added
-- scenarios covered
-- how to run
+output:
+- code only
+- no explanation
+- bullets
+- no extra text
+- test cases
+- scenarios
+- run steps
 - testability suggestion
+
+response:
+- minimal
+- only required sections

@@ -3,15 +3,25 @@ name: csharp-implement
 description: C# implementation
 ---
 
-### use
-- common: copilot-instructions.md
-- csharp: csharp.instructions.md
-- mode: implement only
+mode: implement
 
-### delta
-- keep behavior + architecture consistent
-- output minimal task-related changes only
+core:
+- preserve behavior/architecture
+- minimal changes only
 
 no:
-- auto test
-- unnecessary pattern unless justified
+- test / unnecessary pattern
+
+workflow:
+- understand → criteria → plan → confirm → implement
+- single solution path
+
+output:
+- code only
+- no explanation
+- bullets
+- no extra text
+
+response:
+- minimal
+- only required sections

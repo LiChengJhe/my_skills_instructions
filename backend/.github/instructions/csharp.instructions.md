@@ -3,38 +3,24 @@ description: csharp development guidelines
 applyTo: "**/*.cs"
 ---
 
-### use
-- common: copilot-instructions.md
-- language: C# only
+core:
+- csharp
 
-### style
-naming:
-- PascalCase: class/method/property
-- camelCase: variable/param
-- _camelCase: private field
+style:
+- naming: Pascal(class/method/prop) / camel(var/param) / _camel(private)
+- clear naming / no magic / explicit type
 
-rules:
-- meaningful naming
-- avoid magic values (extract if needed)
-- prefer explicit type (avoid var abuse)
+error:
+- guard input/null
+- no swallow / no exception as flow
+- catch: handle/log/rethrow
 
-### error
-- guard external input / nullable
-- no swallow exception
-- no exception as flow
-- catch: handle / log / rethrow
+linq:
+- readable / no long chain
+- no side effect / handle null
+- avoid multiple enumeration
 
-### linq
-- readability first
-- avoid long chains
-- break complex logic into variables
-- no side effects
-- beware multiple enumeration
-- handle null
-
-### async
-- async/await only
-- no .Result / .Wait()
+async:
+- async/await only (no .Result/.Wait)
 - suffix Async
-- pass CancellationToken if supported
-- no unnecessary Task wrap
+- pass CancellationToken

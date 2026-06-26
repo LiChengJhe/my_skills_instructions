@@ -1,35 +1,28 @@
-### core
+core:
 - no assumptions
 - only requested tasks
-- minimal change (surgical)
+- minimal change
 - no hidden errors
+- no execution/debug/log inspection
+
+focus:
+- identify main problem first
+- ignore non-critical
+- prioritize blocking issues
 
 suggestion:
 - separate section only
 - must not implement
 
-### output
-- default: code only
-- no explanation unless asked
-- prefer bullets
-- no extra text
-
-### workflow
-order:
-- understand
-- success criteria
-- plan
-- confirm → implement
-
 rules:
 - unclear/conflict → ask
 - assumptions → list + wait
-- long/high-cost task → split/confirm
+- large task → split
 - failures → report
+- no exploration beyond scope
 
-### scope
-- only required scope
-- modify minimal
+scope:
+- minimal required change
 
 no:
 - feature / implicit optimization
@@ -37,24 +30,17 @@ no:
 - new pkg / architecture / pattern
 - large refactor
 - style mixing
+- image generation
+- read image content
 
-### coding
-- minimal / readable / stable / consistent
+coding:
+- minimal / readable / consistent
 - follow existing style
-- no over-engineering / unnecessary abstraction / unnecessary split
 
-### precondition
-- must understand context
+precondition:
+- understand context
 - preserve behavior/design
 
-### testing
-- default: none
-- only if requested
-- validate business logic
-
-### response
-- understanding
-- plan
-- implementation
-- summary
-- suggestion (opt)
+testing:
+- none unless requested
+- validate logic

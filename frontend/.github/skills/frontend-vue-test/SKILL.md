@@ -1,56 +1,41 @@
 ---
 name: frontend-vue-test
-description: Vue3 + Vuetify3 + TS playwright e2e
+description: Playwright e2e
 ---
 
-### core
-- use common rules from copilot-instructions.md
-- use frontend rules from frontend-vue.instructions.md
-- this skill = Playwright E2E only
+core:
+- playwright e2e only
+- single solution path
 
-### usage
-only when:
-- user requests playwright / e2e / ui test
+trigger:
+- playwright / e2e / ui test
 
-### principle
-- test user flow, not implementation
+principle:
+- test user flow
 - repeatable / independent / verifiable
-- no coverage-only tests
-- no prod code change unless allowed
+- no coverage only
+- no prod change
 
-### workflow
-order:
-- confirm scope
-- define flow + expected result
+workflow:
+- scope → flow → expect
 - insufficient → ask
 - generate test
 
-### framework
+framework:
 - playwright only
-- no vitest / vue-test-utils / other tools
 
-### coverage
-priority:
-- happy / error / loading-empty / form / critical interaction
-
-common:
+coverage:
+- happy / error / loading / empty / form / critical
 - click / dialog / table / search / pagination
 
-### playwright
-selector:
-- prefer: getByRole / getByLabel / getByText
-- fallback: getByTestId
-- avoid: vuetify internal class / nth-child
+playwright:
+- selector: role/label/text > testid > avoid internal/nth
+- wait: assertion/conditional
+- naming: scenario + expected
 
-wait:
-- use locator assertion / conditional wait
-- no hard wait
+output:
+- code only (test cases)
 
-naming:
-- scenario + expected
-
-### output
-- test cases added
-- flows covered
-- how to run
-- testability suggestion
+response:
+- no extra text
+- no explanation
