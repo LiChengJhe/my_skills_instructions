@@ -1,6 +1,6 @@
 ---
 name: frontend-vue-implement
-description: Vue3 + Vuetify3 + TS implementation
+description: Implement Vue features, bug fixes, and UI changes.
 ---
 
 core:

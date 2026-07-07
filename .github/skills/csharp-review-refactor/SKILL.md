@@ -1,6 +1,6 @@
 ---
 name: csharp-review-refactor
-description: C# code review and refactoring
+description: Review, troubleshoot, and refactor C# code.
 ---
 
 mode: review / refactor

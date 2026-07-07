@@ -1,6 +1,6 @@
 ---
 name: frontend-vue-test
-description: Playwright e2e
+description: Create Playwright E2E, UI, and user-flow tests.
 ---
 
 core:

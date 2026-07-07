@@ -1,6 +1,6 @@
 ---
 name: csharp-implement
-description: C# implementation
+description: Implement C# features, fixes, and code changes.
 ---
 
 mode: implement

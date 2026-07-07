@@ -1,5 +1,5 @@
 ---
-description: Vue3 + Vuetify3 + TS guidelines
+description: Vue 3 + Vuetify 3 + TypeScript coding standards.
 applyTo: "**/*.{vue,ts,tsx,js,jsx}"
 ---
 

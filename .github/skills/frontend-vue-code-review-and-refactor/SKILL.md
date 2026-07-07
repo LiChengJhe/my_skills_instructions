@@ -1,6 +1,6 @@
 ---
 name: frontend-vue-code-review-and-refactor
-description: Vue3 + Vuetify3 + TS review and refactoring
+description: Review, troubleshoot, and refactor Vue code.
 ---
 
 core:

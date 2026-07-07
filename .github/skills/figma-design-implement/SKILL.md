@@ -1,6 +1,6 @@
 ---
 name: figma-design-implement
-description: Figma design implement skill for creating new design frames using existing design system components, tokens, and variables.
+description: Implement Figma UI changes using the design system.
 ---
 
 core:

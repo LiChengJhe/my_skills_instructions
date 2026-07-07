@@ -1,5 +1,5 @@
 ---
-description: csharp development guidelines
+description: C# coding standards and best practices.
 applyTo: "**/*.cs"
 ---
 

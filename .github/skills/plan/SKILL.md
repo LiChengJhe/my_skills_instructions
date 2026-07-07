@@ -1,6 +1,6 @@
 ---
 name: plan
-description: Task planning
+description: Analyze requirements and create implementation plans.
 ---
 
 use:
@@ -16,8 +16,9 @@ output:
 - concise bullets only
 
 response:
-- no extra text
 - no explanation
+- minimal
+- only required sections
 
 workflow:
 - understand → criteria → plan → wait

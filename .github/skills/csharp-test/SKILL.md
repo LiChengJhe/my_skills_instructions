@@ -1,6 +1,6 @@
 ---
 name: csharp-test
-description: C# unit testing
+description: Generate C# unit tests, test cases, and coverage scenarios.
 ---
 
 mode: test
