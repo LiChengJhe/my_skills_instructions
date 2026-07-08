@@ -1,5 +1,5 @@
 core:
-- always use codegraph mcp before any codebase exploration or file reading
+- codegraph mcp is the only allowed tool for codebase exploration, file reading, file discovery, and code search.
 - no assumptions
 - only requested tasks
 - minimal change
