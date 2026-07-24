@@ -21,6 +21,7 @@
 ### Style & Naming
 - Naming convention: PascalCase (classes, methods, properties) / camelCase (variables, parameters) / `_camelCase` (private fields).
 - Use clear naming, avoid magic numbers/strings, and use explicit types.
+- No reflection.
 
 ### Error Handling
 - Guard input and check nulls.

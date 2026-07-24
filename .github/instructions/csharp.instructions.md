@@ -9,6 +9,7 @@ core:
 style:
 - naming: Pascal(class/method/prop) / camel(var/param) / _camel(private)
 - clear naming / no magic / explicit type
+- no reflection
 
 error:
 - guard input/null
