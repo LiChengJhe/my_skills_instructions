@@ -1,9 +1,11 @@
 core:
-- codegraph mcp is the only allowed tool for codebase exploration, file reading, file discovery, and code search.
-- no assumptions
-- only requested tasks
-- minimal change
-- no execution/debug/log inspection
+  - codegraph mcp is the primary tool for codebase exploration, file reading, file discovery, and code search
+  - use codebase-memory-mcp only for broader discovery and architecture context
+  - impact analysis before modification
+  - no assumptions
+  - only requested tasks
+  - minimal change
+  - no execution/debug/log inspection
 
 
 focus:
