@@ -1,27 +1,6 @@
 ---
 name: csharp-implement
-description: Implement C# features, fixes, and code changes.
+description: "C# feature, bug-fix, refactor, and code implementation."
 ---
 
-mode: implement
-
-core:
-- preserve behavior/architecture
-- minimal changes only
-
-no:
-- test / unnecessary pattern
-
-workflow:
-- understand → criteria → plan → confirm → implement
-- single solution path
-
-output:
-- code only
-- no explanation
-- bullets
-- no extra text
-
-response:
-- minimal
-- only required sections
+- Preserve C# public APIs, schemas, and local patterns; change them only when requested or required by the root cause.

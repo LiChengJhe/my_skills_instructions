@@ -1,58 +1,8 @@
-core:
-  - codegraph mcp is the primary tool for codebase exploration, file reading, file discovery, and code search
-  - use codebase-memory-mcp only for broader discovery and architecture context
-  - impact analysis before modification
-  - no assumptions
-  - only requested tasks
-  - minimal change
-  - no execution/debug/log inspection
+# Project Preferences
 
-
-focus:
-  - identify main problem first
-  - understand dependencies before modification
-  - ignore non-critical
-  - prioritize blocking issue
-
-suggestion:
-  - separate section only
-  - must not implement
-
-rules:
-  - unclear/conflict → ask
-  - assumptions → list + wait
-  - large task → split
-  - failures → report
-  - no exploration beyond scope
-  - no modification before impact analysis
-
-scope:
-  - minimal required change
-
-no:
-  - feature addition
-  - implicit optimization
-  - unrelated changes
-  - new package
-  - architecture changes
-  - design pattern changes
-  - large refactor
-  - style mixing
-  - image generation
-  - image reading
-
-coding:
-  - minimal
-  - readable
-  - consistent
-  - follow existing style
-  - preserve existing behavior
-  - modify only proven relevant code
-
-precondition:
-  - understand context
-  - preserve behavior
-  - preserve design
-
-testing:
-  - none unless asked
+- Always target the smallest change that fully satisfies the request: touch only necessary files/symbols, preserve repository conventions, public contracts, architecture, and UI language, reuse existing dependencies/components/tokens/patterns, and avoid unrelated cleanup, refactoring, optimization, new packages, or broad refactors.
+- Do not create or modify tests unless the user explicitly requests tests; running existing checks is allowed when relevant.
+- Do not compile, build, debug, or inspect/analyze project logs unless the user explicitly requests it.
+- Do not search for or read image files autonomously; read or analyze only images or screenshots explicitly provided by the user.
+- `codegraph` MCP is the primary tool for codebase exploration, file reading, file discovery, and code search.
+- Use `codebase-memory` MCP only for broader discovery and architecture context.

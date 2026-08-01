@@ -1,47 +1,7 @@
 ---
 name: frontend-vue-code-review-and-refactor
-description: Review, troubleshoot, and refactor Vue code.
+description: "Vue 3 + Vuetify 3 + TypeScript review and refactoring."
 ---
 
-core:
-- review and refactor
-- safe transformation
-- single solution path
-
-principle:
-- requirement first
-- must-fix only (no nitpicks)
-- refactor: improve structure/perf, preserve behavior
-
-workflow:
-- requirement → correctness → ui/api → readability → perf → review or refactor
-
-checks:
-- requirement:
-  - match / missing / excess / assumption → fail = must-fix
-- correctness:
-  - rule violation (vue/ts/vuetify)
-  - null/optional
-  - prop mutation
-  - computed/watch misuse
-  - template complexity
-- api/ui:
-  - loading/error/empty
-  - no swallowed error
-  - no race/dup api
-  - vuetify only / no override / no hardcoded color / theme ok
-- readability:
-  - naming / size / duplication
-  - no over-engineering
-- perf:
-  - no unnecessary rerender
-  - no heavy template / deep watch
-  - list: pagination / virtual?
-
-output:
-- status + must-fix only
-- code only (if refactor)
-
-response:
-- minimal bullets
-- no explanation
+- Review only: findings first by severity, actionable, with location/impact/recommendation; check Vue/TS/Vuetify contracts and user-visible states; make no edits.
+- Refactor only when requested; prioritize maintainability, readability, and evidence-based performance; prefer the simplest design, use patterns only when they reduce complexity, and avoid over-engineering; preserve behavior/API/responsive/a11y and validate the change.

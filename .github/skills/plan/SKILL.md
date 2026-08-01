@@ -1,27 +1,7 @@
 ---
 name: plan
-description: Analyze requirements and create implementation plans.
+description: "Plans, technical approaches, and scoped work breakdowns without edits."
 ---
 
-use:
-- mode: plan only
-
-core:
-- minimal plan
-- preserve behavior/architecture
-- no impl/test/validation
-- single solution path
-
-output:
-- concise bullets only
-
-response:
-- no explanation
-- minimal
-- only required sections
-
-workflow:
-- understand → criteria → plan → wait
-- rules:
-  - unclear → ask
-  - assumptions → list + wait
+- Plan only: identify the controlling path, acceptance criteria, affected files, validation, and material risks; make no edits or commands.
+- Ask blockers; state assumptions; use concise ordered steps.

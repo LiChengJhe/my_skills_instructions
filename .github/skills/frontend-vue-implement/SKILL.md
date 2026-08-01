@@ -1,25 +1,7 @@
 ---
 name: frontend-vue-implement
-description: Implement Vue features, bug fixes, and UI changes.
+description: "Vue 3 + Vuetify 3 + TypeScript feature, fix, and UI implementation."
 ---
 
-core:
-- Vue3 + Vuetify3 + TS
-- implement only
-- single solution path
-
-output:
-- code only
-- silent unless blocked
-
-response:
-- no extra text
-- no explanation
-
-workflow:
-- implement directly
-
-rules:
-- no arch/api/schema change
-- no new pkg/ui/state
-- no auto test
+- Keep changes within existing Vue component/store/API boundaries; reuse Vuetify components, tokens, Pinia, and API helpers.
+- Preserve API/schema, accessibility, responsive behavior, and relevant state handling; avoid new packages or abstractions unless necessary.

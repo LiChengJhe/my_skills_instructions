@@ -1,34 +1,8 @@
 ---
-description: Vue 3 + Vuetify 3 + TypeScript coding standards.
+description: "Vue 3 + Vuetify 3 + TypeScript conventions."
 applyTo: "**/*.{vue,ts,tsx,js,jsx}"
 ---
 
-core:
-- vue3 + vuetify3 (ts, composition api, script setup)
-
-vue:
-- type-safe (no any, nullable, no unsafe assertion)
-- no prop mutation
-- computed: pure / no side effect
-- watch: side effect only
-- template: no complex logic
-- event: handleXxx / kebab-case emit
-- readable types: props/emits/api/form/table
-
-ui:
-- vuetify only (no custom/lib/override)
-- layout: flex/grid + gap
-- css: scoped + minimal
-- avoid: float / table / excessive absolute
-
-theme:
-- use tokens/css vars
-- no hardcoded color
-- support dark/light + persist
-- ensure contrast
-
-state:
-- handle loading / error / empty
-- no silent error
-- reuse pinia
-- no duplicated api / race
+- Stack: follow existing Vue Composition API, `<script setup>`, Vuetify, Pinia, routing, and TypeScript patterns; prefer precise types and immutable props.
+- UI: reuse components and tokens/CSS vars; preserve theme, contrast, accessibility, and responsive behavior; avoid needless CSS overrides.
+- State: cover relevant loading/error/empty/success states; surface failures; prevent duplicate, stale, or racing requests.

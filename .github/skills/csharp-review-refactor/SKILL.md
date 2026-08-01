@@ -1,53 +1,7 @@
 ---
 name: csharp-review-refactor
-description: Review, troubleshoot, and refactor C# code.
+description: "C# review, troubleshooting, and behavior-preserving refactoring."
 ---
 
-mode: review / refactor
-
-principle:
-- requirement first
-- critical only
-- classify: must-fix / suggested / optional
-- refactor: preserve behavior, improve readability and maintainability
-
-workflow:
-- review: requirement → correctness → readability → maintainability → perf → test
-- refactor: identify issues → plan refactoring → confirm → implement
-- single solution path
-
-checks:
-- requirement: match / excess / missing / assumption → fail = must-fix
-- correctness:
-  - null / boundary / logic
-  - exception misuse / swallowed
-  - async misuse / blocking
-- readability:
-  - naming / size / condition / linq / style
-- maintainability:
-  - duplication / over-engineering / compatibility
-- perf:
-  - multiple enum
-  - unnecessary ToList/ToArray
-  - blocking async
-  - resource release
-
-testing:
-- suggestion only (for review)
-- validate logic (for refactor)
-- happy / boundary / failure
-
-output:
-- code only
-- no explanation
-- bullets
-- no extra text
-- summary: pass / needs-fix / risk + reasons
-- must-fix: bug / risk / requirement
-- suggested: quality
-- optional: optimization
-- refactor-plan: proposed changes and benefits
-
-response:
-- minimal
-- only required sections
+- Review only: findings first by severity, actionable, with location/impact/recommendation; make no edits.
+- Refactor only when requested; prioritize maintainability, readability, and evidence-based performance; prefer the simplest design, use patterns only when they reduce complexity, and avoid over-engineering; preserve behavior/contracts/architecture and validate the change.

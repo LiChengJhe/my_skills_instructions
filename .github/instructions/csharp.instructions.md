@@ -1,27 +1,8 @@
 ---
-description: C# coding standards and best practices.
+description: "C# application and library conventions."
 applyTo: "**/*.cs"
 ---
 
-core:
-- csharp
-
-style:
-- naming: Pascal(class/method/prop) / camel(var/param) / _camel(private)
-- clear naming / no magic / explicit type
-- no reflection
-
-error:
-- guard input/null
-- no swallow / no exception as flow
-- catch: handle/log/rethrow
-
-linq:
-- readable / no long chain
-- no side effect / handle null
-- avoid multiple enumeration
-
-async:
-- async/await only (no .Result/.Wait)
-- suffix Async
-- pass CancellationToken
+- Match repository framework, nullable/analyzers, formatting, naming, and API conventions.
+- Validate external input; preserve exception causes; do not swallow exceptions or use them as normal flow.
+- Use non-blocking async and pass `CancellationToken` through meaningful I/O or long-running work.
