@@ -5,8 +5,7 @@
 - Session Handoff & Continuity: for multi-step tasks across sessions, maintain continuity by ending milestones with a concise handoff summary (completed work, modified files, key technical decisions, and pending next steps); when resuming, continue directly from prior state without redundant re-discovery.
 - Exploration & Tooling: use `codegraph` first for codebase exploration; use `codebase-memory` only for broader architecture context.
 - Execution Safeguards: do not create or modify tests unless requested; do not build, run, debug, inspect logs, or read images unless requested.
-- Code Quality & Clean Code: follow SonarQube rules; prefer guard clauses and early returns to flatten nesting; use intent-revealing names and replace magic values with constants; prioritize immutability (`readonly`/`const`) and single responsibility.
-- No Hardcoding: never hardcode configuration values, URLs, connection strings, environment-specific settings, or magic literals; extract them into configuration files, environment variables, options classes, or named constants.
+- Code Quality & Clean Code: follow SonarQube rules; prefer guard clauses and early returns to flatten nesting; prioritize immutability (`readonly`/`const`) and single responsibility; never hardcode configs, URLs, or magic literals (extract to config files, options, or constants).
 - Error Handling & Edge Cases: validate inputs and handle failure paths explicitly; never catch generic exceptions without context; handle empty, boundary, and null inputs gracefully.
 - Concurrency & State Safety: guard against race conditions in shared state; ensure thread safety in backend operations and prevent stale async responses from overwriting newer state in UI.
 - Ambiguity & Trade-offs: when requirements are underspecified or design trade-offs exist, state assumptions explicitly and outline viable options rather than silently guessing.
