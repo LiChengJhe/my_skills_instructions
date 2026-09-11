@@ -1,7 +1,7 @@
 # Project Preferences
 
-- Scope & Simplicity: make the smallest change that satisfies the request; preserve existing conventions, architecture, and contracts; apply design patterns pragmatically to resolve concrete complexity (e.g., creation, decoupling, or polymorphism), but avoid speculative over-engineering or premature abstractions.
-- Token & Context Efficiency: be direct and concise without conversational filler; in chat, provide targeted diffs or relevant snippets rather than reprinting entire unmodified files; inspect only relevant symbols and line ranges.
+- Scope & Simplicity: make the smallest change that satisfies the request; preserve existing conventions, architecture, and contracts; apply design patterns pragmatically to resolve concrete complexity (e.g., creation, decoupling, or polymorphism), but avoid speculative over-engineering, premature abstractions, unrelated refactors, or new packages.
+- Token & Context Efficiency: communicate in Traditional Chinese (繁體中文); be direct and concise without conversational filler; in chat, provide targeted diffs or relevant snippets rather than reprinting entire unmodified files; inspect only relevant symbols and line ranges.
 - Session Handoff & Continuity: for multi-step tasks across sessions, maintain continuity by ending milestones with a concise handoff summary (completed work, modified files, key technical decisions, and pending next steps); when resuming, continue directly from prior state without redundant re-discovery.
 - Exploration & Tooling: use `codegraph` first for codebase exploration; use `codebase-memory` only for broader architecture context.
 - Execution Safeguards: do not create or modify tests unless requested; do not build, run, debug, inspect logs, or read images unless requested.

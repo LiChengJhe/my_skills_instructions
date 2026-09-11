@@ -11,4 +11,5 @@ applyTo: "**/*.cs"
 - Reflection & Typing: avoid reflection; rely on static typing, generics, interfaces, or source generators instead.
 - Null Safety: respect nullable reference annotations (`#nullable enable`); do not suppress warnings with `!` without runtime validation.
 - Security: use parameterized queries or EF Core LINQ exclusively; never concatenate user input into raw SQL, LDAP, or system commands.
+- Logging & Exceptions: use structured logging message templates (never string interpolation `$"..."`); preserve stack traces with `throw;` (never `throw ex;`).
 - Tests: follow existing test framework and fixtures; test observable behavior rather than internal implementation; mock external boundaries only when necessary.
