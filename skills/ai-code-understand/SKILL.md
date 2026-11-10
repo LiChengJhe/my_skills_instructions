@@ -1,7 +1,6 @@
 ---
 name: ai-code-understand
 description: "Quickly understand the purpose, scope, and behavior changes of the current code changes."
-disable-model-invocation: true
 ---
 Analyze the current code changes.
 

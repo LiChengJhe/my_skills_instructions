@@ -1,7 +1,6 @@
 ---
 name: ai-code-review
 description: "Quickly understand and verify AI-generated code changes by analyzing behavior, execution flow, risks, and the minimum code requiring human review."
-disable-model-invocation: true
 ---
 Analyze the current code changes.
 

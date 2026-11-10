@@ -1,7 +1,6 @@
 ---
 name: ai-code-visualize
 description: Visualize the main execution flow of the current code changes using a concise Mermaid diagram.
-disable-model-invocation: true
 ---
 Analyze the main execution flow of the current code changes.
 

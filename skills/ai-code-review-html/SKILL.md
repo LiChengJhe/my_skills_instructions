@@ -1,7 +1,6 @@
 ---
 name: ai-code-review-html
 description: Generate a concise HTML review dashboard to quickly understand and verify AI-generated code changes.
-disable-model-invocation: true
 ---
 Analyze the current code changes and generate a single self-contained HTML review dashboard.
 

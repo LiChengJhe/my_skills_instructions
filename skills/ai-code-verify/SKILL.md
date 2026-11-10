@@ -1,7 +1,6 @@
 ---
 name: ai-code-verify
 description: Identify meaningful risks in the current code changes and recommend the minimum code requiring human review.
-disable-model-invocation: true
 ---
 Review the current code changes from a human verification perspective.
 
